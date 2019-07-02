@@ -1,9 +1,8 @@
+
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  
 </template>
+
 
 <script>
 // @ is an alias to /src
@@ -13,6 +12,22 @@ export default {
   name: 'home',
   components: {
     HelloWorld
-  }
+  },
+  data(){
+    return {
+      str:'test jsx',
+      val:''
+    }
+  },
+  render(h) {
+    return h(
+      <div>
+        <p>{this.str}</p>
+       <el-input value={this.val}  
+       on-input={val => this.val = val} />
+      </div>
+      
+    )
+  },
 }
 </script>
